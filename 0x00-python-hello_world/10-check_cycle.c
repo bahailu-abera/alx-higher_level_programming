@@ -35,7 +35,7 @@ int check_cycle(listint_t *list)
 	listint_t *prev;
 	temp = malloc(sizeof(listint_t));
 	if (temp == NULL)
-		return (NULL);
+		return (0);
 	temp->n = 4;
 	temp->next = NULL;
 	
