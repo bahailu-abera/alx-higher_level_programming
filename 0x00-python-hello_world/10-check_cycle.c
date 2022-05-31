@@ -12,7 +12,7 @@
  */
 int check_cycle(listint_t *list)
 {
-	/*listint_t *slow, *fast;
+	listint_t *slow, *fast;
 
 	if (list == NULL)
 		return (0);
@@ -30,26 +30,7 @@ int check_cycle(listint_t *list)
 
 		if (fast == slow)
 			return (1);
-	}*/
-	listint_t *temp;
-	listint_t *prev;
-	temp = malloc(sizeof(listint_t));
-	if (temp == NULL)
-		return (0);
-	temp->n = 4;
-	temp->next = NULL;
-	
-	while (list != NULL)
-	{
-		prev = list;
-		list = list->next;
-		prev->next = temp;
-
-		if (list == temp)
-			return (1);
 	}
-	free(temp);
-
 	return (0);
 }
 
