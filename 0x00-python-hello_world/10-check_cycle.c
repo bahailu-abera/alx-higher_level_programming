@@ -33,8 +33,13 @@ int check_cycle(listint_t *list)
 	}*/
 	listint_t *temp;
 	listint_t *prev;
+	temp = malloc(sizeof(listint_t));
+	if (temp == NULL)
+		return (NULL);
+	temp->n = 4;
+	temp->next = NULL;
 	
-	while (list)
+	while (list != NULL)
 	{
 		prev = list;
 		list = list->next;
@@ -43,6 +48,7 @@ int check_cycle(listint_t *list)
 		if (list == temp)
 			return (1);
 	}
+	free(temp);
 
 	return (0);
 }
