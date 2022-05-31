@@ -18,19 +18,15 @@ int check_cycle(listint_t *list)
 		return (0);
 
 	slow = list;
-	fast = list;
+	fast = list->next;
 
-	if (fast->next)
-		fast = fast->next;
-
-	while (fast->next)
+	while (slow != fast)
 	{
+		if (fast == NULL || fast->next == NULL)
+			return (0);
 		slow = slow->next;
 		fast = fast->next->next;
-
-		if (fast == slow)
-			return (1);
 	}
-	return (0);
+	return (1);
 }
 
