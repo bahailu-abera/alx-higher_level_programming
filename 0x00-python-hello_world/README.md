@@ -1,12 +1,12 @@
 # Hello, World
 Project done during Full Stack Software Engineering studies at ALX School. It aims to learn about variables, basics commands (print) and handle strings with Python.
 
-Technologies
-Shell Scripts are written in Bash 5.0.17(1)
-Python Scripts are written with Python 3.8.10
-C files are compiled using gcc 9.3.0
-Tested on Ubuntu 20.04 LTS
-Files
+Technologies<br>
+Shell Scripts are written in Bash 5.0.17(1)<br>
+Python Scripts are written with Python 3.8.10<br>
+C files are compiled using gcc 9.3.0<br>
+Tested on Ubuntu 20.04 LTS<br>
+### Files
 |Filename	                 | Description
 ---------------------      | ------------------------------------------------| 
 | 0-run	                | Shell script that  runs a Python script, where its name is stored in an environment variable|
