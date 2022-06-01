@@ -1,14 +1,15 @@
-If/else, loops, functions
+# If/else, loops, functions
 Project done during Full Stack Software Engineering studies at ALX School. It aims to learn about if/else statements, loops, range and functions in Python.
 
-Technologies
-Shell Scripts are written in Bash 4.3.11(1)
-Python Scripts are written with Python 3.8.10
-C files are compiled using gcc 4.8.4
-Tested on Ubuntu 20.04 LTS
-Files
+Technologies\n
+Shell Scripts are written in Bash 4.3.11(1)\n
+Python Scripts are written with Python 3.8.10\n
+C files are compiled using gcc 4.8.4\n
+Tested on Ubuntu 20.04 LTS\n
+### Files
+
 |Filename	                  | Description                 |
--------------------------------------------------------------
+|--------------------------  | ----------------------------------
 |0-positive_or_negative.py  | 	Prints if a number is positive, zero or negative
 | 1-last_digit.py	Prints the  | last digit of a random number
 | 2-print_alphabet.py	    | Prints the ASCII alphabet in lowercase
