@@ -1,6 +1,13 @@
 # Data Structures: Lists, Tuples
 Project done during Full Stack Software Engineering studies at ALX School. It aims to learn about lists, tuples and strings in Python.
 
+
+Technologies<br>
+Shell Scripts are written in Bash 5.0.17(1)<br>
+Python Scripts are written with Python 3.8.10<br>
+C files are compiled using gcc 9.3.0<br>
+Tested on Ubuntu 20.04 LTS<br>
+
 ### Files
 |Filename               |	Description                              |
 ----------------------- | ------------------------------------      |
