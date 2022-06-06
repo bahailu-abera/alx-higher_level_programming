@@ -6,8 +6,5 @@ def delete_at(my_list=[], idx=0):
     elif idx < 0 or len(my_list) <= idx:
         return my_list
     else:
-        temp = []
-        for index in range(len(my_list)):
-            if index != idx:
-                temp.append(my_list[index])
-        return temp
+        my_list = my_list[:idx] + my_list[idx + 1:]
+        return my_list
