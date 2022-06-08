@@ -6,4 +6,3 @@ def print_sorted_dictionary(a_dictionary):
 
         for key, value in sorted_dict:
             print("{}: {}".format(key, value))
-
