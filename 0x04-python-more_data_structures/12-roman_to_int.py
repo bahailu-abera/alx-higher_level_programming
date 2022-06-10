@@ -36,8 +36,6 @@ def roman_to_int(roman_string):
             else:
                 arab_num += value
 
-            print("value = {}, next value = {}".format(value, nxt_value))
-
             j += 1
             i += 1
 
