@@ -31,9 +31,13 @@ def roman_to_int(roman_string):
             if nxt_value > value:
                 arab_num += nxt_value - value
                 i += 1
+                j += 1
 
             else:
                 arab_num += value
+
+            print("value = {}, next value = {}".format(value, nxt_value))
+
             j += 1
             i += 1
 
