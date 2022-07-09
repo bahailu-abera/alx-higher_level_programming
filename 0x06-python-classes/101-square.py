@@ -71,5 +71,10 @@ class Square:
         for i in range(self.size):
             result += " " * self.position[0]
             result += "#" * self.size
-            result += "\n"
+            if i != self.size - 1:
+                result += "\n"
         return result
+
+
+my_square = Square(4, (0, 4))
+print(my_square)
