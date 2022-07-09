@@ -9,7 +9,7 @@ class Node:
         if not isinstance(data, int):
             raise TypeError("data must be an integer")
         if not isinstance(next_node, Node) and next_node is not None:
-            raise TypeError("next_node must be a node object")
+            raise TypeError("next_node must be a Node object")
         self.__data = data
         self.__next_node = next_node
 
@@ -67,8 +67,10 @@ class SinglyLinkedList:
         cur = self.__head
         result = ""
 
-        while cur:
+        while cur is not None:
             result += str(cur.data)
-            result += "\n"
             cur = cur.next_node
+
+            if cur is not None:
+                result += "\n"
         return result
