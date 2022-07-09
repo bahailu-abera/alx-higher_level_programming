@@ -66,6 +66,9 @@ class Square:
 
     def __str__(self):
         result = ""
+
+        if self.size == 0:
+            return result
         for i in range(self.position[1]):
             result += "\n"
         for i in range(self.size):
@@ -74,3 +77,5 @@ class Square:
             if i != self.size - 1:
                 result += "\n"
         return result
+my_square = Square(0, (10, 10))
+print(my_square)
