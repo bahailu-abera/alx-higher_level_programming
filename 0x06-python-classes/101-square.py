@@ -74,7 +74,3 @@ class Square:
             if i != self.size - 1:
                 result += "\n"
         return result
-
-
-my_square = Square(4, (0, 4))
-print(my_square)
