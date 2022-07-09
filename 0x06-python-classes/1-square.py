@@ -1,6 +1,6 @@
-""" Object Oriented Programming Fundamental module """
-
 #!/usr/bin/python3
+
+""" Object Oriented Programming Fundamental module """
 
 
 class Square:
