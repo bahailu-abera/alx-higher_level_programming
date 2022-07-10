@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-def safe_print_division(a, b):
+def magic_calculation(a, b):
     result = 0
 
     for i in range(1, 3):
