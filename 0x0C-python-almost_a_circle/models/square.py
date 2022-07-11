@@ -28,8 +28,21 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
+    def to_dictionary(self):
+        """ Returns the dictionary representation of a Square """
+        attribute = ["id", "x", "width", "y"]
+        dict_sqr = {}
+        for attr in attribute:
+            if attr == "width":
+                dict_sqr["size"] = getattr(self, attr)
+            else:
+                dict_sqr[attr] = getattr(self, attr)
+
+        return dict_sqr
+
     def __str__(self):
         """ Return the string representation of Square """
         result = ("[Square] ({}) {}/{} - {}").\
             format(self.id, self.x, self.y, self.width)
+
         return result
