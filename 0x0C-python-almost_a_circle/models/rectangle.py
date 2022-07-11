@@ -102,13 +102,17 @@ class Rectangle(Base):
         for _ in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Assigns an argument to each attribute """
         if args is not None and len(args) != 0:
             attr_names = ["id", "width", "height", "x", "y"]
 
             for i in range(len(args)):
                 setattr(self, attr_names[i], args[i])
+        else:
+            if kwargs is not None and len(kwargs) != 0:
+                for key, value in kwargs.items():
+                    setattr(self, key, value)
 
     def __str__(self):
         """ Return the string  represtation of rectangle """
