@@ -2,6 +2,7 @@
 """ rectangle.py """
 from models.base import Base
 
+
 class Rectangle(Base):
     """ The class Rectangle that inherits from Base """
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -51,6 +52,7 @@ class Rectangle(Base):
     def height(self):
         """ Returns the height of the rectangle """
         return self.__height
+
     @height.setter
     def height(self, value):
         """ Sets the new value for the height of rectangle """
@@ -78,6 +80,7 @@ class Rectangle(Base):
     def y(self):
         """ Returns the y coordinates of the rectangle """
         return self.__y
+
     @y.setter
     def y(self, value):
         """ Sets the new value for the y coordinates of rectangle """
@@ -99,8 +102,16 @@ class Rectangle(Base):
         for _ in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
+    def update(self, *args):
+        """ Assigns an argument to each attribute """
+        if args is not None and len(args) != 0:
+            attr_names = ["id", "width", "height", "x", "y"]
+
+            for i in range(len(args)):
+                setattr(self, attr_names[i], args[i])
+
     def __str__(self):
         """ Return the string  represtation of rectangle """
         result = ("[Rectangle] ({}) {}/{} - {}/{}").\
-        format(self.id, self.__x, self.__y, self.__width, self.__height)
+            format(self.id, self.__x, self.__y, self.__width, self.__height)
         return result
