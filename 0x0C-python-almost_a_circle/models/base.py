@@ -99,7 +99,7 @@ class Base:
             with open(filename, 'w') as fs:
                 writer = csv.DictWriter(fs, fieldnames=list(list_dict[0]))
                 writer.writeheader()
-test
+
                 for dct in list_dict:
                     writer.writerow(dct)
                 fs.close()
