@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ The base of all other classes in this project. """
 import json
+import os.path
 
 
 class Base:
@@ -30,7 +31,7 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return []
 
-        return json.loads(json_string, )
+        return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -49,3 +50,35 @@ class Base:
         with open(filename, 'w') as fs:
             fs.write(lst)
             fs.close()
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Create an instance """
+        if cls.__name__ == "Rectangle":
+            new = cls(dictionary["width"], dictionary["height"])
+        else:
+            new = cls(dictionary["size"])
+
+        new.update(**dictionary)
+
+        return new
+
+    @classmethod
+    def load_from_file(cls):
+        """ Get list of instances """
+        filename = "{}.json".format(cls.__name__)
+
+        if os.path.exists(filename) is False:
+            return []
+
+        with open(filename, 'r') as fs:
+            lst_str = fs.read()
+
+        lst_cls = cls.from_json_string(lst_str)
+        lst_inst = []
+
+        for lc in lst_cls:
+            new = cls.create(**lc)
+            lst_inst.append(new)
+
+        return lst_inst
