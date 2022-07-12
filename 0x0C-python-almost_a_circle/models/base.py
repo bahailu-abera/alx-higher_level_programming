@@ -96,15 +96,13 @@ class Base:
             for obj in list_objs:
                 list_dict.append(obj.to_dictionary())
 
-
-        with open(filename, 'w') as fs:
-            writer = csv.DictWriter(fs, fieldnames=list(list_dict[0]))
-            writer.writeheader()
-
-            for dct in list_dict:
-                writer.writerow(dct)
-            fs.close()
-
+            with open(filename, 'w') as fs:
+                writer = csv.DictWriter(fs, fieldnames=list(list_dict[0]))
+                writer.writeheader()
+test
+                for dct in list_dict:
+                    writer.writerow(dct)
+                fs.close()
 
     @classmethod
     def load_from_file_csv(cls):
