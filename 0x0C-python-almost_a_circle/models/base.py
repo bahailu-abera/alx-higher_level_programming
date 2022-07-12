@@ -9,17 +9,6 @@ class Base:
     """
     __nb_objects = 0
 
-    def save_to_file(__class__Base, list_objs):
-        """ Writes the JSON string representation of list_objs to a file """
-        filename = str(cls) + ".json"
-
-        with open(filename, 'w') as fs:
-            if list_objs is None:
-                fs.write("[]")
-            else:
-                fs.write(to_json_string(list_objs))
-            fs.close()
-
     def __init__(self, id=None):
         if id is not None:
             self.id = id
@@ -35,13 +24,20 @@ class Base:
             return "[]"
         return json.dumps(list_dictionaries)
 
-    # def save_to_file(cls, list_objs):
-    #     """ Writes the JSON string representation of list_objs to a file """
-    #     filename = str(cls) + ".json"
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """ Writes the JSON string representation of list_objs to a file """
+        filename =  "{}.json".format(cls.__name__)
+        list_dict = []
 
-    #     with open(filename, 'w') as fs:
-    #         if list_objs is None:
-    #             fs.write("[]")
-    #         else:
-    #             fs.write(to_json_string(list_objs))
-    #         fs.close()
+        if not list_objs:
+            pass
+        else:
+            for obj in list_objs:
+                list_dict.append(obj.to_dictionary())
+
+        lst = cls.to_json_string(list_dict)
+
+        with open(filename, 'w') as fs:
+            fs.write(lst)
+            fs.close()
