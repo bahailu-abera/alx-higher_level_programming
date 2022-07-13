@@ -19,7 +19,7 @@ void print_python_bytes(PyObject *p)
 	printf("[.] bytes object info\n");
 	if (!PyBytes_Check(p))
 	{
-		printf(" [ERROR] Invalid Bytes Object\n");
+		printf("  [ERROR] Invalid Bytes Object\n");
 		setbuf(stdout, NULL);
 		return;
 	}
@@ -27,21 +27,21 @@ void print_python_bytes(PyObject *p)
 	size = ((PyVarObject *)p)->ob_size;
 	string = ((PyBytesObject *)p)->ob_sval;
 
-	printf(" size: %ld\n", size);
-	printf(" trying string: %s\n", string);
+	printf("  size: %ld\n", size);
+	printf("  trying string: %s\n", string);
 
 	if (size >= 10)
 		limit = 10;
 	else
 		limit = size + 1;
 
-	printf(" first %ld bytes:", limit);
+	printf("  first %ld bytes:", limit);
 
 	for (i = 0; i < limit; i++)
 		if (string[i] >= 0)
-			printf(" %02x", string[i]);
+			printf("  %02x", string[i]);
 		else
-			printf(" %02x", 256 + string[i]);
+			printf("  %02x", 256 + string[i]);
 	printf("\n");
 	setbuf(stdout, NULL);
 }
@@ -63,7 +63,7 @@ void print_python_float(PyObject *p)
 
 	if (!PyFloat_Check(p))
 	{
-		printf(" [ERROR] Invalid Float Object\n");
+		printf("  [ERROR] Invalid Float Object\n");
 		setbuf(stdout, NULL);
 		return;
 	}
@@ -72,7 +72,7 @@ void print_python_float(PyObject *p)
 	nf = PyOS_double_to_string(val, 'r', 0, Py_DTSF_ADD_DOT_0,
 				   Py_DTST_FINITE);
 
-	printf(" value: %s\n", nf);
+	printf("  value: %s\n", nf);
 	setbuf(stdout, NULL);
 }
 
@@ -94,7 +94,7 @@ void print_python_list(PyObject *p)
 
 	if (!PyList_Check(p))
 	{
-		printf(" [ERROR] Invalid List Object\n");
+		printf("  [ERROR] Invalid List Object\n");
 		setbuf(stdout, NULL);
 		return;
 	}
