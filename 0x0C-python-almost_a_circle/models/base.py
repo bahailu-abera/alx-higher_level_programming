@@ -3,6 +3,8 @@
 import json
 import os.path
 import csv
+import turtle
+import random
 
 
 class Base:
@@ -25,6 +27,35 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ Draw objects """
+        colors = ["black", "yellow", "green", "red", "blue"]
+        for rect in list_rectangles:
+            turtle.penup()
+            turtle.goto(rect.x, rect.y)
+            turtle.pendown()
+            pos = random.randint(0, len(colors) - 1)
+            turtle.pen(fillcolor=colors[pos], pencolor=colors[pos - 1],
+                       pensize=10)
+            turtle.right(90)
+            for i in range(2):
+                turtle.left(90)
+                turtle.fd(rect.width)
+                turtle.left(90)
+                turtle.fd(rect.height)
+
+        for sqr in list_squares:
+            turtle.penup()
+            turtle.goto(sqr.x, sqr.y)
+            turtle.pendown()
+            turtle.right(90)
+            for i in range(2):
+                turtle.left(90)
+                turtle.fd(sqr.size)
+                turtle.left(90)
+                turtle.fd(sqr.size)
 
     @staticmethod
     def from_json_string(json_string):
