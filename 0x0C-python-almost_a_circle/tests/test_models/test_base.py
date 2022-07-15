@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """ Module for testing the Base class """
 import unittest
-from models.base  import Base
+import os
+from models.base import Base
 from models.square import Square
 from models.rectangle import Rectangle
+
 
 class TestBaseMethods(unittest.TestCase):
     """ suite to test Base class """
@@ -56,5 +58,19 @@ class TestBaseMethods(unittest.TestCase):
         with self.assertRaises(AttributeError):
             b1.__nb_objects
 
-    def test_save_to_file_1(self):
-        pass
+    def test_save_to_file(self):
+        """ Test JSON file """
+        res = "[]"
+
+        try:
+            os.remove("Square.json")
+        except FileNotFoundError:
+            pass
+        Square.save_to_file(None)
+        self.assertTrue(os.path.exists("Square.json"))
+        with open("Square.json", "r") as fs:
+            self.assertEqual(fs.read(), res)
+
+        Square.save_to_file([])
+        with open("Square.json", "r") as fs:
+            self.assertEqual(fs.read(), "[]")
