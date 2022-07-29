@@ -2,6 +2,6 @@
 """ Module for creating locked class """
 
 
-class LcokedClass:
+class LcokedClass(object):
     """ Locked Class Representation """
-    __slots__ = "first_name"
+    __slots__ = 'first_name'
