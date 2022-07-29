@@ -1,7 +1,13 @@
 #!/usr/bin/python3
-""" Module for creating locked class """
+"""
+A module that containts a clas that avoids
+dynmaically created attributes
+"""
 
 
-class LcokedClass(object):
-    ''' Protected class '''
-    __slots__ = 'first_name'
+class LockedClass:
+    __slots__ = ['first_name']
+
+    def __init__(self):
+        """ Init method """
+        pass
