@@ -3,5 +3,6 @@
 
 
 class LcokedClass(object):
-    """ Locked Class Representation """
+    """ Locked Class Representation
+    """
     __slots__ = 'first_name'
