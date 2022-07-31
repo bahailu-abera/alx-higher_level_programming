@@ -6,8 +6,4 @@
 def lookup(obj):
     """ Return a list of available attributes
     """
-    attributes = []
-    for attr in obj.__slots__:
-        attributes.append(attr)
-
-    return attributes
+    return dir(obj)
