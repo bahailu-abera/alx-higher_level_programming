@@ -4,7 +4,8 @@
 
 def read_file(filename=""):
     """ Read file filename """
-    with open(filename, 'r') as fs:
+    with open(filename, 'r', encoding="utf-8") as fs:
         content = fs.read()
-        print(content.strip())
+        if content:
+            print(content.strip())
         fs.close()
