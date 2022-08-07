@@ -4,7 +4,6 @@
 
 def write_file(filename="", text=""):
     """ Write text to the file filename """
-    with open(filename, 'w') as fs:
+    with open(filename, 'w', encoding="utf-8") as fs:
         fs.write(text)
-        fs.close()
     return len(text)
