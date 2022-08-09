@@ -1,3 +1,3 @@
 -- Print the full description of the table
 -- Query to print full description
-SHOW COLUMN FROM first_table;
+SHOW COLUMNS FROM first_table;
