@@ -1,3 +1,5 @@
+-- List all shows without genres
+-- Query to list all shows without genres
 SELECT ts.title
 FROM tv_shows ts LEFT JOIN (SELECT ts.id, ts.title
      FROM tv_shows ts INNER JOIN tv_show_genres tsg
