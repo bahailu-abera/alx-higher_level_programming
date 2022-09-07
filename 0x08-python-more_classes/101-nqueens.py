@@ -51,7 +51,7 @@ def main():
     argv = sys.argv
 
     if (len(argv) != 2):
-        print("Usage: nquens N")
+        print("Usage: nqueens N")
         sys.exit(1)
     n = argv[1]
 
