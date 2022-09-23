@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Module for peak finding
+"""
+
 
 def peak(lst, low, high):
     """ Recursively find the peak
