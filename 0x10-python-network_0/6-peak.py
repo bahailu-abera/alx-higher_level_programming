@@ -7,14 +7,14 @@ Module for peak finding
 def peak(lst, low, high):
     """ Recursively find the peak
     """
-    mid = (low + high) // 2
-    if (low == mid or mid == high):
+    mid = (low + high - 1) // 2
+    if (mid - 1 < 0 or mid + 1 >= high):
         return lst[mid]
-    if (lst[mid] <= lst[mid - 1]):
-        return peak(lst, low, mid)
-    if (lst[mid] <= lst[mid + 1]):
-        return peak(lst, mid, high)
-    return lst[mid]
+    if (lst[mid - 1] < lst[mid] and lst[mid + 1] < lst[mid]):
+        return lst[mid]
+    if (lst[mid] < lst[mid + 1]):
+        return peak(lst, mid + 1, high)
+    return peak(lst, low, mid)
 
 
 def find_peak(list_of_integers):
