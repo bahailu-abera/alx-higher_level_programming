@@ -10,7 +10,7 @@ def error_code(url):
     """
     prints the error code
     """
-    response = request.get(url)
+    response = requests.get(url)
     if (response.status_code >= 400):
         print("Error code: {}".format(response.status_code))
     else:
