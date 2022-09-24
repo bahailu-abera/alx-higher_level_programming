@@ -2,13 +2,14 @@
 """
 Module to fetch data from https://alx-intranet.hbtn.io/status
 """
+import urllib.request
 
 
 def fetch(url):
-    """ fetch from a URL='url'
     """
-    import urllib.request as req
-    with req.urlopen(url) as response:
+    fetch from a URL='url'
+    """
+    with urllib.request.urlopen(url) as response:
         html = response.read()
         print('Body response:')
         print('\t- type: {}'.format(type(html)))
