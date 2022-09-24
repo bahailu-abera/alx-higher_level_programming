@@ -13,8 +13,9 @@ def post_email(url, email):
     """
     data = {}
     data['email'] = email
-    params = urllib.parse.urlencode(data)
-    full_url = url + '?' + params
+    data = urllib.parse.urlencode(data)
+    data = data.encode('ascii')
+    req = urllib.request.Request(url, data)
     with urllib.request.urlopen(url) as res:
         print(res.read().decode("utf-8"))
 
