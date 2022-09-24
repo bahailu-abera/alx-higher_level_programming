@@ -14,7 +14,7 @@ def list_commits(url, repo_name, user_name):
     res = requests.get(full_url)
     for js in res.json()[:10]:
         print(js['sha'], end="")
-        print(" :", js['commit']['author']['name'])
+        print(":", js['commit']['author']['name'])
 
 
 if __name__ == "__main__":
