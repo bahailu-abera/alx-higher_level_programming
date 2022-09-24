@@ -11,8 +11,7 @@ def post_email(url, email):
     """
     post an email to the specified url
     """
-    data = {}
-    data['email'] = email
+    data = {'email': email}
     data = urllib.parse.urlencode(data)
     data = data.encode('ascii')
     req = urllib.request.Request(url, data)
