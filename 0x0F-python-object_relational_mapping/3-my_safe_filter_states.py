@@ -13,10 +13,9 @@ def filter_by_user_input(username, password, database, name):
     db = MySQLdb.connect(host='localhost', user=username, passwd=password,
                          db=database)
     cur = db.cursor()
-    name = name.split(' ;')
-    sf_name = MySQLdb.escape_string(state_name).decode()
+    sf_name = MySQLdb.escape_string(name).decode()
     sqlquery = ("""SELECT * FROM states WHERE \
-    BINARY states.name='{}'""".format(sf_name))
+    BINARY states.name='{}' ORDER BY states.id""".format(sf_name))
     cur.execute(sqlquery)
     rows = cur.fetchall()
     cur.close()
