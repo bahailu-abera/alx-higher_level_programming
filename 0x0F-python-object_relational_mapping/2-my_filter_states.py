@@ -14,7 +14,7 @@ def filter_by_user_input(username, password, database, name):
                          db=database)
     cur = db.cursor()
     sqlquery = ("""SELECT * FROM states WHERE \
-    states.name='{}'""".format(name))
+    BINARY states.name='{}'""".format(name))
     cur.execute(sqlquery)
     rows = cur.fetchall()
     cur.close()
