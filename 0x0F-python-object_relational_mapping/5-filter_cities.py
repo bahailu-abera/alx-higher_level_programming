@@ -32,5 +32,7 @@ if __name__ == "__main__":
     cities = cities_list(argv[1], argv[2], argv[3], argv[4])
     for city in cities[:-1]:
         print(city[0], end=', ')
-    if cities:
+    try:
         print(cities[-1][0])
+    except IndexError:
+        print()
