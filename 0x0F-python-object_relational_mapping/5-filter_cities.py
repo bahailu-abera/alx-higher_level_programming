@@ -13,10 +13,9 @@ def cities_list(username, password, database, state_name):
                          db=database)
     cur = db.cursor()
     sf_state_name = MySQLdb.escape_string(state_name).decode()
-    sqlquery = ("""SELECT cities.id, cities.name, states.name \
-    FROM cities INNER JOIN states ON cities.state_id = states.id \
-    WHERE states.name='{}'
-    ORDER BY cities.id""".format(sf_state_name))
+    sqlquery = ("""SELECT cities.name \
+    FROM states INNER JOIN cities ON states.id = cities.state_id \
+    WHERE states.name='{}'""".format(sf_state_name))
     cur.execute(sqlquery)
 
     rows = cur.fetchall()
@@ -31,5 +30,6 @@ if __name__ == "__main__":
     argv = sys.argv
 
     cities = cities_list(argv[1], argv[2], argv[3], argv[4])
-    for city in cities:
-        print(city)
+    for city in cities[:-1]:
+        print(city[0], end=', ')
+    print(cities[-1][0])
