@@ -13,9 +13,11 @@ def filter_by_user_input(username, password, database, name):
     db = MySQLdb.connect(host='localhost', user=username, passwd=password,
                          db=database)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE states.name = %s \
-    ORDER BY states.id", (name, ))
+    sqlquery = ("""SELECT * FROM states WHERE \
+    states.name='{}'""".format(name))
+    cur.execute(sqlquery)
     rows = cur.fetchall()
+    cur.close()
 
     return rows
 
