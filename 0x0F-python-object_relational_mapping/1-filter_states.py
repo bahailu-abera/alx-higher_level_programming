@@ -13,8 +13,8 @@ def filter_states(username, password, database):
     db = MySQLdb.connect(host='localhost', user=username, passwd=password,
                          db=database)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE states.name LIKE 'N%' ORDER \
-    BY states.id")
+    cur.execute("SELECT * FROM states WHERE states.name \
+    LIKE BINARY 'N%' ORDER BY states.id")
     rows = cur.fetchall()
     cur.close()
 
