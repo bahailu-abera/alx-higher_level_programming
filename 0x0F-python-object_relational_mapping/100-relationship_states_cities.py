@@ -14,7 +14,6 @@ def main():
     """
     Main method
     """
-    state_name = sys.argv[4]
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".
                            format(sys.argv[1],
                                   sys.argv[2],
