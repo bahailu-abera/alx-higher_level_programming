@@ -26,7 +26,10 @@ def main():
 
         # query the first State object and print id and name of the state
         state = session.query(State).filter_by(id=1).first()
-        print("{}: {}".format(state.id, state.name))
+        if state:
+            print("{}: {}".format(state.id, state.name))
+        else:
+            print("Nothing")
 
 
 if __name__ == "__main__":
