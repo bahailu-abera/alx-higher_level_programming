@@ -8,6 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 # Create a Base instance
 Base = declarative_base()
 
+
 class City(Base):
     """
     City model for cities table
