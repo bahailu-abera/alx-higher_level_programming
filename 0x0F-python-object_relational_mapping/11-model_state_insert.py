@@ -21,8 +21,6 @@ def main():
     # create new state
     louisiana = State(name="Louisiana")
 
-    print(louisiana.id)
-
     # Create a Session instance
     with Session() as session:
         session.add(louisiana)
