@@ -26,11 +26,10 @@ def main():
     with Session() as session:
         # Create California state
         california = State(name="California")
-        session.add(california)
 
         # Create San Francisco city
-        san_francisco = City(name="San Francisco")
-        california.cities.append(san_francisco)
+        new_city = City(name="San Francisco", state=california)
+        session.add(new_city)
         session.commit()
 
 
